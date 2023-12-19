@@ -16,6 +16,8 @@ function Navbar(){
     return(
     
     < div className={styles.wrap}> 
+
+    <br></br>
     
     <img src={logo} alt="Logo" />
      
