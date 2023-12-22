@@ -1,0 +1,30 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.cardWrapper{
+    margin-top: 18px;
+    display: flex;
+    
+}
+
+.wrapper{
+display: flex;
+flex-direction: row;
+gap: 40px;
+flex-wrap: wrap;
+}
+
+.toggletext{
+cursor: pointer;
+color: white;
+}
+
+.totalwrap{
+    padding: 0px 30px 60px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
