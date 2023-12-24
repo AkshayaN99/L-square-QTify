@@ -4,6 +4,7 @@ import { CircularProgress } from "@mui/material";
 import axios from "axios";
 import Section from "../Section/section";
 import styles from  "./cardcom.module.css";
+import Carousel from "../Carousel/Carousel";
 
 
 
@@ -13,8 +14,8 @@ function Cardcom (){
     const [topAlbums, settopAlbums] = useState([]);
     const [newAlbums, setnewAlbums] = useState([]);
     const [songsData, setsongsData] = useState([]);
-    const [istopChecked, setIstopChecked] = useState(false);
-    const [isnewChecked, setIsnewChecked] = useState(false);
+    const [istopChecked, setIstopChecked] = useState(true);
+    const [isnewChecked, setIsnewChecked] = useState(true);
 
     const handletopToggle=()=>{
       setIstopChecked((prevState)=>!prevState);
@@ -87,8 +88,14 @@ const performCalltop = async () => {
       ))}
       </div>
       
-    ):(//Carousal
-    null)}
+    ):(
+      <Carousel 
+      data={topAlbums}
+      renderComponent={(topAlbums)=> <Section  data={topAlbums}
+      type={"album"}/>}
+
+      />
+    )}
     </div>
       )}
       </div>
@@ -115,8 +122,14 @@ const performCalltop = async () => {
          
       ))}
       </div>
-    ):(//Carousal
-    null)}
+    ):(
+      <Carousel 
+      data={newAlbums}
+      renderComponent={(newAlbums)=> <Section  data={newAlbums}
+      type={"album"}/>}
+
+      />
+    )}
      </div>
       )}
       </div>
