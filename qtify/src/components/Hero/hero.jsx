@@ -1,4 +1,4 @@
-import headphones from "../assets/headphones.png";
+import headphones from "../../assets/headphones.png";
 import React from "react";
 import styles from "./hero.module.css";
  

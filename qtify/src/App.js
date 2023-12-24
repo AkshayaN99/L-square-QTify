@@ -1,8 +1,8 @@
 
 import './App.css';
-import Navbar from './components/navbar';
-import Heroimage from './components/hero';
-import Cardcom from './components/cardcom';
+import Navbar from './components/Navbar/navbar';
+import Heroimage from './components/Hero/hero';
+import Cardcom from './components/Card/cardcom';
 
 function App() {
   return (

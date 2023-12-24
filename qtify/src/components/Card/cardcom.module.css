@@ -4,7 +4,16 @@
     align-items: baseline;
 }
 
+.totalwrap{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
 .cardWrapper{
+    display: flex;
+flex-direction: row;
+
     margin-top: 18px;
     display: flex;
     
@@ -13,6 +22,7 @@
 .wrapper{
 display: flex;
 flex-direction: row;
+justify-content: space-evenly;
 gap: 40px;
 flex-wrap: wrap;
 }
@@ -22,9 +32,3 @@ cursor: pointer;
 color: white;
 }
 
-.totalwrap{
-    padding: 0px 30px 60px 30px;
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
-}

@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./navbar.module.css";
-import searchicon from "../assets/searchicon.svg";
-import logo from "../assets/logo.png";
+import searchicon from "../../assets/searchicon.svg";
+import logo from "../../assets/logo.png";
 //import { Box } from '@mui/material'; 
 
 

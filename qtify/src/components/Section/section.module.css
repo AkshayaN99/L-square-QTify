@@ -4,6 +4,7 @@
   }
   
   .card{
+   
      position: relative;
      width: 160px;
      height: 205px;
@@ -26,6 +27,7 @@
   
   .pill{
     font-size: 12px;
+    color: white;
     background-color: black;
     width: max-content;
     padding: 6px;
@@ -44,7 +46,4 @@
   color: white;
   }
   
-  .chip{
-      color: white;
-      background-color: black;
-  }
+  

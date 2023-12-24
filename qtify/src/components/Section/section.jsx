@@ -1,6 +1,6 @@
 import React from "react";
-import styles  from "./hero.module.css";
-import {  Chip, Tooltip } from "@mui/material";
+import styles  from "./section.module.css";
+import {   Tooltip } from "@mui/material";
 
 import {
     
@@ -33,10 +33,9 @@ function Section({data,type}){
                         <CardContent>
                         <div  className={styles.banner}>
     
-                            <Chip
-                            label={`${follows} Follows`}
-                            size="small"
-                            className={styles.chip}/>
+                        <div  className={styles.pill}>
+                             <p>{follows} Follows</p>
+                             </div>
                         
                         </div>
                         </CardContent>
