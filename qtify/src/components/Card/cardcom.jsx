@@ -5,6 +5,7 @@ import axios from "axios";
 import Section from "../Section/section";
 import styles from  "./cardcom.module.css";
 import Carousel from "../Carousel/Carousel";
+import Genres from "../Genres/Genres";
 
 
 
@@ -14,6 +15,8 @@ function Cardcom (){
     const [topAlbums, settopAlbums] = useState([]);
     const [newAlbums, setnewAlbums] = useState([]);
     const [songsData, setsongsData] = useState([]);
+    const [filters, setFilters] = useState([{key:"all", label:"All"}]);
+    const [selectedFilterindex, setselectedFilterindex] = useState(0);
     const [istopChecked, setIstopChecked] = useState(true);
     const [isnewChecked, setIsnewChecked] = useState(true);
 
@@ -50,15 +53,33 @@ const performCalltop = async () => {
     try {
       let res = await axios.get(`https://qtify-backend-labs.crio.do/songs`);
       setsongsData(res.data);
+     
     } catch (error) {
         console.log(error)
     }
   }
+ 
+  const performCallgenres = async () => {
+   
+
+    try {
+      let res = await axios.get(`https://qtify-backend-labs.crio.do/genres`);
+      setFilters(res.data);
+      
+     
+    } catch (error) {
+        console.log(error)
+    }
+  }
+
+
   useEffect(() =>
   {
     performCalltop();
     performCallnew();
     performCallsongs();
+    performCallgenres();
+   
   },[])
   
   return(
@@ -142,21 +163,15 @@ const performCalltop = async () => {
      <div className={styles.totalwrap}>   
      {songsData.length===0 ? (
       <CircularProgress/>):(
-        <div className={styles.cardWrapper}>
-          
-          <div className={styles.wrapper}> 
-      {songsData.map((ele) => (
+       <Genres
+       songs={songsData}
+       filters={filters}
+       selectedFilterindex={selectedFilterindex}
+       setselectedFilterindex={setselectedFilterindex}
+       />
+    
         
-          <Section
-          
-            data={ele}
-            type={"song"}
-          />
-         
-      ))}
       
-     </div>
-     </div>
       )}
       </div>
       </div> 
